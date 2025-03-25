@@ -1,42 +1,95 @@
-﻿using Event_plus.Domains;
-using Event_plus.Interfaces;
+﻿using Eventplus_api_senai.Context;
+using Eventplus_api_senai.Domais;
+using Eventplus_api_senai.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
-namespace Event_plus.Repository
+namespace Eventplus_api_senai.Repository
 {
     public class TipoEventoRepository : ITipoEventoRepository
-    {
-        private readonly Event_plus _context;   
-
-        public TipoEventoRepository(Evento_Context contexto)
-
+    { //Listar,Cadastrar,,Deletar,Atualizar,ListarPorId
+        private readonly Event_Context _context;
+        public TipoEventoRepository(Event_Context context)
         {
-            _context = contexto;
-
+            _context = context;
         }
+
         public void Atualizar(Guid id, TipoEvento tipoEvento)
-
         {
-            throw new NotImplementedException();
+            try
+            {
+                TipoEvento novotipoEvento = _context.TipoEvento.Find(id)!;
+                if (novotipoEvento != null) {
+
+                    novotipoEvento.TituloTipoEvento = tipoEvento.TituloTipoEvento;
+                }
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        TipoEvento ITipoEventoRepository.BuscarPorId(Guid Id, TipoEvento tipoEvento)
+        public TipoEvento BuscarPorId(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                TipoEvento novotipoEvento = _context.TipoEvento.Find(id)!;
+                return novotipoEvento;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        void ITipoEventoRepository.Cadastrar(TipoEvento tipoEvento)
+        public void Cadastro(TipoEvento novoTipoEvento)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.TipoEvento.Add(novoTipoEvento);
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        void ITipoEventoRepository.deletar(Guid Id)
+        public void Deletar(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                TipoEvento novotipoEvento = _context.TipoEvento.Find(id)!;
+                if (novotipoEvento != null)
+                { 
+                _context.TipoEvento.Remove(novotipoEvento);
+                }
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        List<TipoEvento> ITipoEventoRepository.Listar()
+        public List<TipoEvento> Listar()
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                List<TipoEvento> ListaTipoEvento = _context.TipoEvento.ToList();
+                return ListaTipoEvento;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

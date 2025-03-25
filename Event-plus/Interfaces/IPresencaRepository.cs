@@ -1,14 +1,14 @@
-﻿using Projeto_Event_Plus.Domains;
+﻿using Eventplus_api_senai.Domais;
 
-namespace Event_plus.Interfaces
+namespace Eventplus_api_senai.Interfaces
 {
     public interface IPresencaRepository
     {
-        void  Deletar(Guid id);
         List<Presenca> Listar();
-        Presenca BuscarPorId(Guid id);  
-        void Atualizar (Guid id,Presenca presenca);
-        List<Presenca> ListarMinhas(Guid id);
+        Presenca BuscarPorId(Guid id);
+        void Atualizar(Guid id, Presenca presenca);
         void Inscrever(Presenca Inscricao);
+        List<Presenca> ListarMinhas(Guid id);
+        void Deletar(Guid id);
     }
 }

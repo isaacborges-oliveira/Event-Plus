@@ -1,7 +1,7 @@
-﻿using api_filmes_senai.Domains;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-namespace Projeto_Event_Plus.Domains
+
+namespace Eventplus_api_senai.Domais
 {
     [Table("Presenca")]
     public class Presenca
@@ -9,15 +9,17 @@ namespace Projeto_Event_Plus.Domains
         [Key]
         public Guid PresencaID { get; set; }
 
-        public Guid Situcao { get; set; }
-
-        public Guid UsuarioID { get; set; }
-        [ForeignKey("UsuarioID")]
-        public Usuario? Usuario { get; set; }
-
         public Guid EventoID { get; set; }
         [ForeignKey("EventoID")]
-        public Eventos? Eventos { get; set; }
+        public Evento? Evento { get; set; }
+        
+        public Guid UsuarioID { get; set; }
+
+        [ForeignKey("UsuarioID")] 
+        public Usuario? Usuario { get; set; }
+
+        [Column(TypeName ="BIT")]
+        public bool? Situacao { get; set; }
+
     }
 }
-

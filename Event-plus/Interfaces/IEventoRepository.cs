@@ -1,20 +1,14 @@
-﻿using Projeto_Event_Plus.Domains;
+﻿using Eventplus_api_senai.Domais;
 
-namespace Event_plus.Interfaces
+namespace Eventplus_api_senai.Interfaces
 {
     public interface IEventoRepository
     {
-        void Cadastrar (Eventos novoEvento
-            );
-        void Deletar (Guid id);
-        List<Eventos> Listar();
-        List<Eventos> ListarPorId (Guid id);
-        List<Eventos> ProximosEventos (Guid id);
-        Eventos BuscarPorId(Guid id);
-
-            Void Atualizar
-        Eventos BuscarPorId (Guid id);  
-
-
+        void Cadastrar(Evento novoEvento);
+        List<Evento> Listar();
+        void Deletar(Guid id);
+        void Atualizar(Guid id,Evento evento);
+        List<Evento> ListarProximosEventos(Guid id);
+        List<Evento> ListarPorId(Guid id);
     }
 }

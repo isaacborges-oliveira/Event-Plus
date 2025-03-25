@@ -1,13 +1,12 @@
-﻿using api_filmes_senai.Domains;
+﻿using Eventplus_api_senai.Domais;
 
-namespace Event_plus.Interfaces
+namespace Eventplus_api_senai.Interfaces
 {
     public interface IUsuarioRepository
-    {
-        void Cadastrar(Usuario novoUsuario);
-
+    { 
+        void Cadastrar (Usuario novoUsuario);
         Usuario BuscarPorId(Guid id);
 
-        Usuario BuscarPorEmaileSenha(string email, string senha);
+        Usuario BuscarPorEmailESenha(string email, string senha);
     }
 }

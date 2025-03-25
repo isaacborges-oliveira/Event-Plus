@@ -1,15 +1,13 @@
-﻿using Event_plus.Domains;
+﻿using Eventplus_api_senai.Domais;
 
-namespace Event_plus.Interfaces
+namespace Eventplus_api_senai.Interfaces
 {
     public interface ITipoUsuarioRepository
     {
-        void Cadastrar(TipoUsuario tipoUsuario);
-        void deletar (Guid id);
-        List<TipoUsuario> lista();
-
-        TipoUsuario BuscarPorId (Guid id);
-
-        void Atualizar(Guid id, TipoUsuario tipoUsuario);   
+        void Cadastro(TipoUsuario novoTipoUsuario);
+        List<TipoUsuario> Listar();
+        void Deletar(Guid id);
+        void Atualizar(Guid id, TipoUsuario tipoUsuario);
+        TipoUsuario BuscarPorId(Guid id);
     }
 }
