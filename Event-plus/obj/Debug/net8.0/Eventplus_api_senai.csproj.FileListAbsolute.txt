@@ -349,3 +349,5 @@ C:\Users\43022067801\Desktop\Event-Plus\Event-plus\obj\Debug\net8.0\refint\Event
 C:\Users\43022067801\Desktop\Event-Plus\Event-plus\obj\Debug\net8.0\Eventplus_api_senai.pdb
 C:\Users\43022067801\Desktop\Event-Plus\Event-plus\obj\Debug\net8.0\Eventplus_api_senai.genruntimeconfig.cache
 C:\Users\43022067801\Desktop\Event-Plus\Event-plus\obj\Debug\net8.0\ref\Eventplus_api_senai.dll
+C:\Users\43022067801\Desktop\Event-Plus\Event-plus\bin\Debug\net8.0\Eventplus_api_senai.xml
+C:\Users\43022067801\Desktop\Event-Plus\Event-plus\obj\Debug\net8.0\Eventplus_api_senai.xml
